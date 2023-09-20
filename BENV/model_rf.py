@@ -51,8 +51,8 @@ class AQIPredictorRandomForest:
                                 timestamp + 3 * 24 * 3600]).reshape(-1, 1)
         predicted_val = self.rf_regr.predict(timestamps)
         noise = np.random.normal(0, noise_level, predicted_val.shape)
-        predicted_pm2_5_with_noise = predicted_val + noise
-        return predicted_pm2_5_with_noise
+        predicted_val_with_noise = predicted_val + noise
+        return predicted_val_with_noise
 
 # Usage
 if __name__ == '__main__':
