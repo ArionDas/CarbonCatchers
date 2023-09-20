@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PREDICT NOW!!</title>
+    <link rel="stylesheet" href="predict_now.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="nav">
+      <a href="../../index.html" class="link">HOME</a>
+      <a href="#" class="link">PREDICT NOW!! </a
+      ><a href="#" class="link">Text Link</a
+      ><a href="../about_us/about_us.html" class="link">ABOUT US</a>
+    </section>
+    <div class="select">
+      <div class="date">
+        <h1>Select a Date:</h1>
+        <input type="date" id="datePicker" required />
+        <div id="selectedDate"></div>
+      </div>
+      <div class="time">
+        <h1>Select a Time:</h1>
+        <input type="time" id="timePicker" required />
+        <div id="selectedTime"></div>
+      </div>
+      <div class="steps">
+        <h1>How to use?</h1>
+        <ul>
+          <li>Select a date.</li>
+          <li>Select a time.</li>
+          <li>Press Predict and see the Results!!</li>
+        </ul>
+      </div>
+    </div>
+    <button class="predict">Predict</button>
+    <div class="predicted--data">
+      <div class="current--data">
+        <h1>PM2.5</h1>
+        <h1 class="pm2">-</h1>
+      </div>
+      <div class="data--graph"></div>
+    </div>
+
+    <script src="predict_now.js"></script>
+  </body>
+</html>
