@@ -41,14 +41,23 @@ class AQIPredictorRandomForest:
         timestamp = datetime_obj.timestamp()
         predicted_aqi = self.rf_regr.predict(np.array([[timestamp]]))
         return predicted_aqi[0]
+    
+    def predict_aqi_by_week(self, datetime_str, noise_level=5.0) -> np.ndarray:
+        datetime_obj = pd.to_datetime(datetime_str)
+        timestamp = datetime_obj.timestamp()
+        timestamps = np.array([timestamp - 3 * 24 * 3600, timestamp - 2 * 24 * 3600,
+                                timestamp - 1 * 24 * 3600, timestamp,
+                                timestamp + 1 * 24 * 3600, timestamp + 2 * 24 * 3600,
+                                timestamp + 3 * 24 * 3600]).reshape(-1, 1)
+        predicted_val = self.rf_regr.predict(timestamps)
+        noise = np.random.normal(0, noise_level, predicted_val.shape)
+        predicted_pm2_5_with_noise = predicted_val + noise
+        return predicted_pm2_5_with_noise
 
 # Usage
 if __name__ == '__main__':
-    data_file = "SIH Project/air-quality-india.csv"
+    data_file = "BENV/air-quality-india.csv"
     predictor = AQIPredictorRandomForest(data_file)
     data = predictor.load_data()
     predictor.train_model(data)
-    for i in range(17, 30):
-        input_datetime = f'2023-09-{i} 19'
-        predicted_aqi = predictor.predict_aqi(input_datetime)
-        print(f'Predicted AQI for {input_datetime}: {predicted_aqi}')
+    print(predictor.predict_aqi_by_week("2023-09-20 15"))
