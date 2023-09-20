@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn About Where You Live!</title>
+    <link rel="stylesheet" href="location.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"
+    ></script>
+  </head>
+  <body>
+    <section class="nav">
+      <a href="../home_page/home_page.html" class="link">HOME</a>
+      <a href="#" class="link">Text Link</a
+      ><a href="#" class="link">Text Link</a
+      ><a href="#" class="link">Text Link</a>
+    </section>
+    <header class="search--bar">
+      <input
+        type="text"
+        placeholder="Enter the Place you want to search"
+        spellcheck="false"
+        class="input-area"
+      />
+      <button class="submit">Submit</button>
+      <h1 class="place" style="color: white">Ranchi</h1>
+    </header>
+    <div class="section--1">
+      <div class="co aqi"><strong>CO</strong><span></span></div>
+      <div class="nh3 aqi"><strong>NH3</strong><span></span></div>
+      <div class="no aqi"><strong>NO</strong><span></span></div>
+      <div class="no2 aqi"><strong>NO2</strong><span></span></div>
+      <div class="o3 aqi"><strong>O3</strong><span></span></div>
+      <div class="pm2 aqi"><strong>PM2.5</strong><span></span></div>
+      <div class="pm10 aqi"><strong>PM10</strong><span></span></div>
+      <div class="so2 aqi"><strong>SO2</strong><span></span></div>
+    </div>
+    <div class="section--2">
+      <div class="graph">
+        <canvas id="myChart"> </canvas>
+      </div>
+    </div>
+    <div class="scale"></div>
+    <div class="section--3">
+      <div id="map" style="display: none"></div>
+      <link
+        rel="stylesheet"
+        href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"
+      />
+      <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Predict Now</a></li>
+      </ul>
+    </footer>
+    <script src="location.js"></script>
+  </body>
+</html>
