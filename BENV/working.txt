@@ -1,5 +1,0 @@
-We use a random forest model to accurately predict the PM2.5 level at a given future date and time.
-The random forest model is initialized with the number of decision trees(n_estimators) as well as a reference date. The input date(s) are converted to number of hours utilizing this reference date.
-The model is then trained and fitted to the data using 80% of the data set as the training data.
-The model then takes a specific datetime string as an input in the format "Year-Month-Day Hour" and returns the predicted value of PM2.5.
-Moreover, it also predicts the PM2.5 level upto three days before and after the given input date.
