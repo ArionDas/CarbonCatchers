@@ -36,7 +36,45 @@ predict.addEventListener("click", (e) => {
       }
       console.log(2);
       const data = await response.json();
-      data_to_show.textContent = data.predicted_data.toFixed(2);
+      data_to_show.textContent = data.predicted_data_day.toFixed(2);
+      console.log(data.predict_aqi_by_week);
+      const aqiData = data.predict_aqi_by_week;
+      console.log(aqiData);
+      const ctx = document.getElementById("barChart").getContext("2d");
+      const days = [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Day 4",
+        "Day 5",
+        "Day 6",
+        "Day 7",
+      ];
+      const myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: days,
+          datasets: [
+            {
+              label: "AQI",
+              data: aqiData,
+              backgroundColor: "white",
+              borderColor: "white",
+              borderWidth: 1,
+              fontColor: "white",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          legend: {
+            labels: {
+              fontColor: "white",
+              fontSize: 18,
+            },
+          },
+        },
+      });
     } catch (error) {
       console.error("Error:", error);
     }

@@ -19,7 +19,9 @@ predictor.train_model(data)
 
 @app.get('/{datetime_str}')
 def add(datetime_str: str):
+    predicted_data_day = predictor.predict_aqi(datetime_str)
+    predict_aqi_by_week = predictor.predict_aqi_by_week(datetime_str).tolist() 
     return {
-        'predicted_data': predictor.predict_aqi(datetime_str),
-        'myname':'varad'
+        'predicted_data_day': predicted_data_day,
+        'predict_aqi_by_week': predict_aqi_by_week
     }

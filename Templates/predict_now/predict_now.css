@@ -90,12 +90,59 @@ input[type="time"] {
 .current--data {
   width: 49%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .predicted--data .current--data .pm2 {
-  font-size: 7em;
+  font-size: 7rem;
 }
 .data--graph {
   width: 49%;
   height: 100%;
-  background-color: cyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  text-align: center;
+  color: white;
+}
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+footer div {
+  height: 100%;
+  width: 30%;
+}
+footer .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .company_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .links a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 660px) {
+  .predicted--data {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
 }
