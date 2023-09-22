@@ -1,0 +1,148 @@
+body {
+  font-family: Montserrat;
+  text-align: center;
+  background-image: url(pic1.jpg);
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+
+input[type="date"] {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#selectedDate,
+#selectedTime {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+}
+input[type="time"] {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.nav {
+  width: 100%;
+  color: #fff;
+  background-color: #000;
+  justify-content: space-between;
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+}
+.link {
+  color: #fff;
+  letter-spacing: 5px;
+  padding-top: 0;
+  font-size: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.select {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.predict {
+  font-size: 2em;
+  color: white;
+  background-color: orangered;
+  margin-top: 100px;
+  padding: 10px 40%;
+}
+
+.predict:hover {
+  background-color: black;
+}
+
+@media screen and (max-width: 320px) {
+  .predict {
+    width: 60%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 470px) {
+  .select {
+    flex-direction: column;
+  }
+}
+
+.select .steps ul {
+  text-align: left;
+  color: white;
+}
+
+.predicted--data {
+  margin-top: 30px;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.current--data {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.predicted--data .current--data .pm2 {
+  font-size: 7rem;
+}
+.data--graph {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  text-align: center;
+  color: white;
+}
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+footer div {
+  height: 100%;
+  width: 30%;
+}
+footer .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .company_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .links a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 660px) {
+  .predicted--data {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
