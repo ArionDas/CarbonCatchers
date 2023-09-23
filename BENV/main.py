@@ -15,6 +15,7 @@ app.add_middleware(
 predictor = AQIPredictorRandomForest("BENV/air-quality-india.csv")
 data = predictor.load_data()
 predictor.train_model(data)
+predictor.save_model("model.pkl")
 
 
 @app.get('/{datetime_str}')
