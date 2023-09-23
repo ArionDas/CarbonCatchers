@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from datetime import datetime
 import pandas as pd
 import numpy as np
+import pickle as pk
 
 class AQIPredictorRandomForest:
     def __init__(self, data_file) -> None:
@@ -53,6 +54,15 @@ class AQIPredictorRandomForest:
         noise = np.random.normal(0, noise_level, predicted_val.shape)
         predicted_val_with_noise = predicted_val + noise
         return predicted_val_with_noise
+    
+    def save_model(self, filename):
+        with open(filename, 'wb') as file:
+            pk.dump(self, file)
+    
+    @classmethod
+    def load_model(cls, filename):
+        with open(filename, 'rb') as file:
+            return pk.load(file)
 
 # Usage
 if __name__ == '__main__':
@@ -60,4 +70,6 @@ if __name__ == '__main__':
     predictor = AQIPredictorRandomForest(data_file)
     data = predictor.load_data()
     predictor.train_model(data)
-    print(predictor.predict_aqi_by_week("2023-09-20 15"))
+    predictor.save_model("BENV/model.pkl")
+    new_predictor = AQIPredictorRandomForest.load_model("BENV/model.pkl")
+    print(new_predictor.predict_aqi_by_week("2023-09-20 15"))

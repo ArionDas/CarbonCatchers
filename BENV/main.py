@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .model_rf import AQIPredictorRandomForest
+from aqi_predictor.model_rf import AQIPredictorRandomForest
 app = FastAPI()
 origins = ['http://127.0.0.1:5500']
 
